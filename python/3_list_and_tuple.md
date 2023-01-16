@@ -41,3 +41,7 @@ print(numbers[9: 18])  #positive slice
 print(numbers[9: 18: 3])  #specify the step-size
 print(numbers[-6: -1])  #negative slice
 ```
+
+# Tuple
+Tuples are another data type, similar to list.
+Tuples are identified by `()` . Internal elements are separated by commas. However, tuples can not be assigned twice, which is equivalent to a read-only list.
