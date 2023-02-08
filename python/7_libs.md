@@ -37,7 +37,40 @@ Official tutorial
 ## how to use
 Official tutorial
  - tips: for beginners, skip the first tutorial and only read [pyplot](https://matplotlib.org/stable/tutorials/introductory/pyplot.html#sphx-glr-tutorials-introductory-pyplot-py). I think in this class plot is not so important and we can use a easier way.
+## loglog
+The official document is [loglog](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.loglog.html#matplotlib.pyplot.loglog)
+This is just a thin wrapper around `plot` which additionally changes both the x-axis and the y-axis to log scaling. All of the concepts and parameters of plot can be used here as well.
 
+```python
+import matplotlib.pyplot as plt 
+import numpy as np 
+
+x = np.linspace(1e-5, 10, 100)
+print(x)
+y = x ** 5
+
+fig = plt.figure(figsize=(5.5,8))
+
+ax1 = fig.add_subplot(221)
+ax2 = fig.add_subplot(222)
+ax3 = fig.add_subplot(223)
+ax4 = fig.add_subplot(224)
+
+ax1.plot(x, y)
+ax1.set_title("x-y")
+
+ax2.loglog(x, y)
+ax2.set_title("loglog")
+
+ax3.plot(x, y)
+ax3.set_xscale('log')
+ax3.set_title("logx")
+
+ax4.plot(x, y)
+ax4.set_yscale('log')
+ax4.set_title("logy")
+plt.show()
+```
 # basic conda commands
 ```shell
 conda --version
